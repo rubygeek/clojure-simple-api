@@ -2,15 +2,17 @@
   (:require [schema.core :as s]
             [ring.swagger.schema :refer [coerce!]]))
 
+;; Inspiration: https://github.com/metosin/compojure-api-examples/blob/master/src/compojure/api/examples/domain.clj
+
 (def Source {:name s/Str
              :url  s/Str})
 
-(def Recipe {:id Long
-             :url String
-             :name String
+(def Recipe {:id s/Int
+             :url s/Str
+             :name s/Str
              :source Source })
 
-(def NewRecipe (dissoc Recipe :id))
+;; dont think i need this (def NewRecipe (dissoc Recipe :id))
 
 (defonce id-seq (atom 0))
 (defonce recipes (atom (array-map)))
