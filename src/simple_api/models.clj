@@ -33,3 +33,5 @@
     (swap! recipes assoc (:id recipe) recipe)
     (get-recipe (:id recipe))))
 
+(defn recipe-count []
+  (count @recipes))
