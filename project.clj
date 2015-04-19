@@ -4,6 +4,7 @@
   :min-lein-version "2.0.0"
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [compojure "1.3.1"]
+                 [metosin/ring-swagger "0.19.3"]
                  [ring/ring-defaults "0.1.2"]]
   :plugins [[lein-ring "0.8.13"]]
   :ring {:handler simple-api.handler/app}
