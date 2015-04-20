@@ -12,8 +12,6 @@
              :name s/Str
              :source Source })
 
-;; dont think i need this (def NewRecipe (dissoc Recipe :id))
-
 (defonce id-seq (atom 0))
 (defonce recipes (atom (array-map)))
 

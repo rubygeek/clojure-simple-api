@@ -17,8 +17,8 @@
 
   (testing "updating recipe"
     (let [recipe (get-recipe 1)
-          update "updated"
-          updated-recipe (update! 1 {:name update})]
+          update "updated name"
+          updated-recipe (update! (assoc-in recipe [:name] update))]
       (is (= (:name updated-recipe) update )))) 
  
   (testing "deleting recipe"
