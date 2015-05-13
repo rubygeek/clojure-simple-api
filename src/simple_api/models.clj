@@ -17,12 +17,18 @@
 
 
 (defn get-recipe [id] (@recipes id))
-(defn get-recipes [] (-> recipes deref vals reverse))
+
+(defn get-recipes [] (-> recipes 
+                         deref 
+                         vals 
+                         reverse))
+
 (defn delete! [id] (swap! recipes dissoc id) nil)
 
 (defn add! [new-recipe]
   (let [id (swap! id-seq inc)
-        recipe (coerce! Recipe (assoc new-recipe :id id))]
+        new-recipe-with-id (assoc new-recipe :id id)
+        recipe (coerce! Recipe new-recipe-with-id)]
     (swap! recipes assoc id recipe)
     recipe))
 
