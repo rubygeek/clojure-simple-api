@@ -1,5 +1,5 @@
 (ns simple-api.handler-test
-  (:require [clojure.test :refer :all]
+  (:require [clojure.test :refer [deftest testing is]]
             [ring.mock.request :as mock]
             [simple-api.handler :refer :all]))
 

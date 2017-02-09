@@ -18,8 +18,7 @@
 
 (defn get-recipe [id] (@recipes id))
 
-(defn get-recipes [] (-> recipes 
-                         deref 
+(defn get-recipes [] (-> @recipes  
                          vals 
                          reverse))
 

@@ -1,13 +1,11 @@
 (ns simple-api.models-test
-  (:require [clojure.test :refer :all]
-            [simple-api.models :refer :all]
-            [schema.core :as s]))
+  (:require [clojure.test :refer [deftest testing is use-fixtures]]
+            [simple-api.models :refer :all]))
 
 (use-fixtures :each
   (fn [tests]
     (add! {:name "test" :url "test.com" :source {:name "mom" :url "mom.com"}})
     (tests)))
-
 
 (deftest test-repository
   (testing "adding recipe"
@@ -15,13 +13,13 @@
            r (add! recipe)]
        (is (= 2 (recipe-count)))))
 
-  (testing "updating recipe"
+  (testing "updating a recipe"
     (let [recipe (get-recipe 1)
           update "updated name"
           updated-recipe (update! (assoc-in recipe [:name] update))]
       (is (= (:name updated-recipe) update )))) 
  
-  (testing "deleting recipe"
+  (testing "deleting a recipe"
     (let [id  (:id (get-recipe 1) )
           deleted (delete! id)]
       (is (nil? deleted))))
