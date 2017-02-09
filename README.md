@@ -1,19 +1,27 @@
 # simple-api
 
-FIXME
+A simple api as a placeholder for CRUD. Data is stored in an atom. 
 
-## Prerequisites
+```
+user=> (require '[simple-api.models :as m])
 
-You will need [Leiningen][] 2.0.0 or above installed.
+user=> (m/add! {:name "7 Can Soup"  :source {:name "Food Network" :url "www.foodnetwork.com"}  :url "http://www.foodnetwork.com/recipes/ree-drummond/7-can-soup"})
 
-[leiningen]: https://github.com/technomancy/leiningen
+{:source {:url "www.foodnetwork.com", :name "Food Network"}, :name "7 Can Soup", :url "http://www.foodnetwork.com/recipes/ree-drummond/7-can-soup", :id 2}
 
-## Running
 
-To start a web server for the application, run:
+user=> (m/recipe-count)
+1
 
-    lein ring server
 
-## License
+user=> (m/get-recipe 2)
 
-Copyright © 2015 FIXME
+{:source {:url "www.foodnetwork.com", :name "Food Network"}, :name "7 Can Soup", :url "http://www.foodnetwork.com/recipes/ree-drummond/7-can-soup", :id 2}
+
+
+user=> (m/update! (assoc-in (m/get-recipe 2) [:name] "7-Can Soup"))
+
+{:source {:url "www.foodnetwork.com", :name "Food Network"}, :name "7-Can Soup", :url "http://www.foodnetwork.com/recipes/ree-drummond/7-can-soup", :id 2}
+```
+
+See tests for more examples.
