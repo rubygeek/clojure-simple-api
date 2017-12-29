@@ -1,7 +1,6 @@
 (ns simple-api.models
   (:require [clojure.spec.alpha :as s]
-            [simple-api.specs.recipe]
-            [simple-api.specs.source]))
+            [simple-api.specs.recipe]))
 
 ;; Inspiration: https://github.com/metosin/compojure-api-examples/blob/master/src/compojure/api/examples/domain.clj
 
