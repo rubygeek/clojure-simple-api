@@ -12,6 +12,8 @@ Previously with Schema I used coerse! to get a valid recipe, but now with spec I
 
 Intereting bits are in [models](/src/simple-api/models.clj]) and probably could remove the compojure app altogether.
 
+I also added [Clojure Reloaded](http://thinkrelevance.com/blog/2013/06/04/clojure-workflow-reloaded) to this since that is how I prefer to work now.
+
 Interesting exercise at the least.
 
 ```clojure
