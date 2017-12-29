@@ -2,7 +2,7 @@
 
 A simple api as a placeholder for CRUD. Data is stored in an array as an atom. 
 
-After Clojure 1.9 came out, I changed ouy the Plumatic Schema for Clojure Spec. 
+After Clojure 1.9 came out, I changed out the [Plumatic Schema](https://github.com/plumatic/schema) for [Clojure Spec](https://www.clojure.org/guides/spec). 
 
 I have two entities [Source](/src/simple_api/specs/source.clj) and [Recipe](/src/simple_api/specs/recipe.clj).
 
