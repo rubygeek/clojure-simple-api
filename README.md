@@ -10,6 +10,8 @@ Previously with Schema I used coerse! to get a valid recipe, but now with spec I
 
  Another change with Schema I had an exception on an invalid record, with Spec I get a `:clojure.spec.alpha/invalid` which I guess is better. Exceptions should be reserved for when something "really" is exceptional and not an invalid record.
 
+Intereting bits are in [models](/src/simple-api/models.clj]) and probably could remove the compojure app altogether.
+
 Interesting exercise at the least.
 
 ```clojure
